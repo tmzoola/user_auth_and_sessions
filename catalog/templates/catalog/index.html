@@ -11,6 +11,11 @@
 
     <P>Total books: {{num_books}}</P>
     <P>Num Available: {{num_instances_avail}}</P>
-    
+    {% if user.is_authenticated %}
+        <p>You are Logged In </p>
+        <p>Welcome : {{user.get_username}}</p>
+    {%else%}
+        <p> You are not Logged in </p>
+    {% endif %}
 </body>
 </html>
