@@ -14,8 +14,10 @@
     {% if user.is_authenticated %}
         <p>You are Logged In </p>
         <p>Welcome : {{user.get_username}}</p>
+        <a href="{% url 'logout' %}?next={{request.path}}">Logout </a>
     {%else%}
         <p> You are not Logged in </p>
+        <a href="{% url 'login' %}?next={{request.path}}">Login</a>
     {% endif %}
 </body>
 </html>
